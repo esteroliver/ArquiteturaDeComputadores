@@ -3,10 +3,11 @@ main:
 	addi $2, $0, 5
 	syscall
 	
-	sll $4, $2, 1
+	add $4, $0, $2
+	mul $4, $4, $4
 	
 	addi $2, $0, 1
-	syscall 
+	syscall
 	
 	addi $2, $0, 10
 	syscall

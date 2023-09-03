@@ -1,16 +1,17 @@
-.text 
+.text
 main:
 	addi $2, $0, 5
 	syscall
 	
-	add $8, $2, $0
-	addi $9, $0, 10
+	addi $8, $0, 10
 	
-	div $8, $9
+	div $2, $8
+	mfhi $9
+	mflo $2
+	div $2, $8
 	mfhi $10
-	mflo $8
-	
-	div $8, $9
+	mflo $2
+	div $2, $8
 	mfhi $11
 	mflo $12
 	
@@ -18,15 +19,15 @@ main:
 	addi $2, $0, 1
 	syscall
 	
-	add $4, $0, '\n'
+	addi $4, $0, '\n'
 	addi $2, $0, 11
 	syscall
-
+	
 	add $4, $0, $11
 	addi $2, $0, 1
 	syscall
 	
-	add $4, $0, '\n'
+	addi $4, $0, '\n'
 	addi $2, $0, 11
 	syscall
 	
@@ -34,5 +35,14 @@ main:
 	addi $2, $0, 1
 	syscall
 	
+	addi $4, $0, '\n'
+	addi $2, $0, 11
+	syscall
+	
+	add $4, $0, $9
+	addi $2, $0, 1
+	syscall
+	
 	addi $2, $0, 10
 	syscall
+	
